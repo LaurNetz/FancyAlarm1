@@ -5,7 +5,10 @@ import grovepi
 # SIG,NC,VCC,GND
 loudness_sensor = 0
 
-def sound()
+#Diese Variable nutzen wir in MainCode um alarm auszuläsen
+sound = True
+
+def SoundFunk():
     while True:
         try:
             # Read the sound level
@@ -15,16 +18,18 @@ def sound()
 
 
             # bedingung für sensor sound=True bestimmen
-            if #bedingung :
+            if #bedingung in form von sensordten :
                 sound = True
+                #oder: return True
 
             # bedingung für sensor sound=False bestimmen
-            elif #bedingung :
+            elif #bedingung in form von sensordaten:
                 sound = False
+                #oder : return True
 
             time.sleep(.5)
         #schreibt bei einem error einen Eintrag in die Protokolldatei inkl. Datum/Zeit
         except IOError:
             with open("ProtokollDatei.txt", "w") as pfile:
                 pfile.write("Soundsensor hat einen Error" + time.strftime("%d.%m.%Y %H:%M:%S") + "\n")
-            file.close
+

@@ -5,8 +5,10 @@ import grovepi
 # SIG,NC,VCC,GND
 pir_sensor = 8
 
+motion = True
+
 grovepi.pinMode(pir_sensor,"INPUT")
-def motion():
+def MotionFunk():
     while True:
         try:
             # Sense motion, usually human, within the target range
@@ -30,4 +32,4 @@ def motion():
         except IOError:
             with open("ProtokollDatei.txt", "w") as pfile:
                 pfile.write("Motion Sensor hat einen Error" + time.strftime("%d.%m.%Y %H:%M:%S") + "\n")
-            file.close
+
