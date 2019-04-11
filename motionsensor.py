@@ -6,28 +6,28 @@ import grovepi
 pir_sensor = 8
 
 grovepi.pinMode(pir_sensor,"INPUT")
+def motion():
+    while True:
+        try:
+            # Sense motion, usually human, within the target range
+            if grovepi.digitalRead(pir_sensor):
+                print 'Motion Detected'
+            else:
+                print '-'
 
-while True:
-    try:
-        # Sense motion, usually human, within the target range
-        if grovepi.digitalRead(pir_sensor):
-            print 'Motion Detected'
-        else:
-            print '-'
+            # bedingung für sensor motion=True bestimmen
+            if  # bedingung :
+                motion = True
 
-        # bedingung für sensor motion=True bestimmen
-        if  # bedingung :
-            motion = True
-
-        # bedingung für sensor sound=False bestimmen
-        elif  # bedingung :
-            motion = False
+            # bedingung für sensor sound=False bestimmen
+            elif  # bedingung :
+                motion = False
 
 
-        # if your hold time is less than this, you might not see as many detections
-        time.sleep(.2)
-
-    except IOError:
-        with open("ProtokollDatei.txt", "w") as pfile:
-            pfile.write("Motion Sensor hat einen Error" + date + time + "\n")
-        file.close
+            # if your hold time is less than this, you might not see as many detections
+            time.sleep(.2)
+         #schreibt bei einem error einen Eintrag in die Protokolldatei inkl. Datum/Zeit
+        except IOError:
+            with open("ProtokollDatei.txt", "w") as pfile:
+                pfile.write("Motion Sensor hat einen Error" + time.strftime("%d.%m.%Y %H:%M:%S") + "\n")
+            file.close
