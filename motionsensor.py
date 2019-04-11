@@ -15,8 +15,19 @@ while True:
         else:
             print '-'
 
+        # bedingung für sensor motion=True bestimmen
+        if  # bedingung :
+            motion = True
+
+        # bedingung für sensor sound=False bestimmen
+        elif  # bedingung :
+            motion = False
+
+
         # if your hold time is less than this, you might not see as many detections
         time.sleep(.2)
 
     except IOError:
-        print "Error"
+        with open("ProtokollDatei.txt", "w") as pfile:
+            pfile.write("Motion Sensor hat einen Error" + date + time + "\n")
+        file.close
