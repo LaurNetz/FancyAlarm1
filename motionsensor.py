@@ -5,6 +5,7 @@ import grovepi
 # SIG,NC,VCC,GND
 pir_sensor = 8
 
+#Diese Variable nutzen wir in MainCode um alarm auszuläsen
 motion = True
 
 grovepi.pinMode(pir_sensor,"INPUT")

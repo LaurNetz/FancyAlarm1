@@ -3,6 +3,16 @@ import motionsensor
 import cameraaktor
 # Time Modul importieren (für die Protokoll Datei)
 import time
+#von maiks git eingefügt
+##        import des moduls
+#   import Surveillance_Picture
+##        start des moduls
+#   Surveillance_Picture.start()
+
+
+
+
+
 
 # Die zwei Variablen Sound und Motion Zustandsfefinition. IN den Codes der Sensoren muss also die jeweilige Zustände gesetzt werden
 

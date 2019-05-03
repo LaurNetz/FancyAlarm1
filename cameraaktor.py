@@ -1,16 +1,18 @@
-sudo raspi-config
+#ehemals Datei helloWorldCam
+from picamera import PiCamera
+#from subprocess import call
+import datetime
+import time
 
-#In den Einstellungen auf Peripheriegeräte wechseln und bei Kamera auf “enable” wechseln.
 
+date = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
 
-#Bilder
-#Über das Terminal kann ein Bild aufgenommen mittels folgendem Befehl:
+camera = PiCamera()
 
-raspistill -o bild.jpg
+camera.resolution = (640, 480)
+camera.rotation = 180
+camera.start_recording("/home/pi/" + date + ".h264")
+# Videolaenge in Sekunden
+camera.wait_recording(10)
+camera.stop_recording()
 
-#Das gespeicherte Bild wird im Home abgelegt. 
-
-#Video
-#Über das Terminal kann auch ein Video aufgenommen mittels folgendem Befehl:
-
-raspivid -o video.h264 -t 10000
